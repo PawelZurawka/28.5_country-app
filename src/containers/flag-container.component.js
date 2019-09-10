@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CountryFlagList from '../presentational/flag-list.component';
@@ -9,10 +8,6 @@ import {
 } from '../actions/actions-countries';
 
 class CountryFlagContainer extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.dispatch(getCountries());
     this.props.dispatch(searchCountries(''));

@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 import {
   GET_COUNTRIES,
   GET_COUNTRY,
@@ -20,7 +19,7 @@ const countriesReducer = function(state = initialState, action) {
       return Object.assign({}, state, { countries: state.countries });
     case GET_COUNTRY:
       const selectedCountry = state.countries.find(
-        country => country.id == action.id
+        country => country.id === parseInt(action.id)
       );
       return Object.assign({}, state, { selectedCountry });
     case SEARCH_COUNTRIES:
@@ -30,7 +29,7 @@ const countriesReducer = function(state = initialState, action) {
       return Object.assign({}, state, { visibleCountries: foundCountries });
     case DELETE_COUNTRY:
       const notDeletedCountries = state.countries.filter(
-        country => country.id != action.id
+        country => country.id !== action.id
       );
       const notDeletedVisibleCountries = state.visibleCountries.filter(
         country => country.id !== action.id
